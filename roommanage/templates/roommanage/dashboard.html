@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Dashboard - Room Management DIU
+{% endblock title %}
+{% block css_files %}
+{% include 'roommanage/css.html' %}
+{% endblock css_files %}
+
+
+{% block content %}
+
+  <!-- ======= Header ======= -->
+  {% include 'roommanage/nav.html' %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Find Empty Classrooms</h5>
+                <form class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="date" class="form-control" id="floatingEmail" placeholder="Your Email">
+                      <label for="floatingEmail">Expected Date</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="time" class="form-control" id="floatingPassword" placeholder="Password">
+                      <label for="floatingPassword">Expected Time</label>
+                    </div>
+                  </div>
+                </form>
+                <button type="button" class="mt-3 btn btn-success rounded-pill" style="width: 100%;">Find Now</button>
+            </div>
+            
+          </div>
+          </div>
+          <div class="row">
+          <!--All card goes here-->
+
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="text-align:center ;">
+                  <h5 class="card-title">304 AB4</h5>
+                  <p class="card-text"><b>Capacity: </b>50 people</p>
+                  <button type="button" class="btn btn-success rounded-pill"  data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
+                </div>
+              </div><!-- End Card with an image on top -->
+            </div>
+            
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!--modal-->
+<div class="modal fade" id="smallModal" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3">
+          <div class="col-md-12">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+              <label for="floatingName">Reason</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success rounded-pill" style="width: 100%;">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'roommanage/footer.html' %}
+
+{% endblock content %}

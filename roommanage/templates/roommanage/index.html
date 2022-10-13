@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Room Management DIU{% endblock title %}
+
+{% block css_files %}
+{% include 'roommanage/css.html' %}
+
+{% endblock css_files %}
+
+
+
+{% block content %}
+
+ 
+  {% include 'roommanage/nav.html' %}
+
+  <section class="section hero align-items-center justify-content-center">
+    <h1 class="heroh1">Find Classroom</h1>
+    <div class="col-lg-6 herosearch">
+      <div class="card p-3">
+        <div class="card-body">
+            <form class="row g-3" method="POST">
+              {% csrf_token %}
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input name="date" type="date" class="form-control" id="floatingEmail" placeholder="Your Email">
+                  <label for="floatingEmail">Expected Date</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input name="time" type="time" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Expected Time</label>
+                </div>
+              </div>
+            
+            <button type="submit" class="mt-3 btn btn-success rounded-pill" style="width: 100%;">Find Now</button>
+          </form>
+          </div>
+        
+      </div>
+      </div>
+  </section>
+
+
+  <main id="main" class="main" style="margin-left:0;">
+
+
+    <section class="section">
+
+      <div class="row">
+        {% if time %}
+        <p>Result for date: {{date}} time: {{time}}</p>
+        {% endif %}
+        
+        {% for room in rooms %}
+        <div class="col-lg-3">
+          <div class="card">
+            <img src="{{room.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body" style="text-align:center ;">
+              <h5 class="card-title">{{room.title}} {{room.pk}}</h5>
+              <p class="card-text"><b>Capacity: </b>{{room.capacity}}</p>
+              {% if user.is_authenticated %}
+              <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal{{room.pk}}">Book Now</button>
+              {% else %}
+              <a href="{% url 'login' %}"><button type="button" class="btn btn-success rounded-pill">Book Now</button></a>
+              {% endif %}
+            </div>
+          </div><!-- End Card with an image on top #smallModal-->
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  
+  {% include 'roommanage/footer.html' %}
+{% for room in rooms %}
+<div class="modal fade" id="smallModal{{room.pk}}" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3" method="POST">
+            {% csrf_token %}
+            <div class="col-md-12">
+              <div class="form-floating">
+                <input name="reason" type="text" class="form-control" id="reason" placeholder="Your Name" required>
+                <label for="floatingName">Reason</label>
+                <input type="hidden" name="time" value="{{time}}">
+                <input type="hidden" name="date" value="{{date}}">
+                <input type="hidden" name="room_no" value="{{room.pk}}">
+                <input type="hidden" name="user_mail" value="{{user.email}}">
+                <input type="hidden" name="user_name" value="{{user.first_name}} {{user.last_name}}">
+                <input type="hidden" name="room_title" value="{{room.title}}">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success rounded-pill" style="width: 100%;">Done</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </div>
+    </div>
+</div>
+{% endfor %}
+
+  {% endblock content %}
