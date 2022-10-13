@@ -1,1 +1,1 @@
-web: gunicorn roommanagemeent.wsgi
+web: gunicorn roommanagement.wsgi
