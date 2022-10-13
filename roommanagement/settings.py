@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'roommanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -120,15 +121,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
+#STATIC_FILES=[
+ #   BASE_DIR/"static"
+#]
+STATIC_ROOT = os.path.join(BASE_DIR , "staticfiles")
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+os.makedirs(STATIC_TMP, exist_ok=True)
 STATIC_FILES=[
-    BASE_DIR/"static"
+    os.path.join(BASE_DIR,"static")
 ]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_ROOT = os.path.join(BASE_DIR,"uploads")
+MEDIA_URL = "/user-media/"
 
 #Email Settings
 EMAIL_HOST = 'smtp-relay.sendinblue.com'
