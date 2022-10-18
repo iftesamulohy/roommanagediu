@@ -146,8 +146,8 @@ MEDIA_URL = "/user-media/"
 #Email Settings
 EMAIL_HOST = 'smtp-relay.sendinblue.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'iftesamulohi@gmail.com'
-EMAIL_HOST_PASSWORD = 'n7jAQLRsdStC39Br'
+EMAIL_HOST_USER = 'joyforroom@gmail.com'
+EMAIL_HOST_PASSWORD = 'CWZQrMYEzDmt6J3K'
 EMAIL_USE_TLS = True
 
 LOGOUT_REDIRECT_URL = "/"

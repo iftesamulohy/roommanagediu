@@ -133,12 +133,12 @@ class Index(TemplateView):
                 subject,
                 'Hi I am '+name+' .\n'+message,
                 email,
-                ['iftesamulohi@gmail.com'],
+                ['joy15-13006@diu.edu.bd'],
                     )
             send_mail(
                 subject,
                 'Hi I am '+name+' .\n'+message,
-                'iftesamulohi@gmail.com',
+                'joy15-13006@diu.edu.bd',
                 [email],
                     )
         print("alloc: ",allocated_time)
