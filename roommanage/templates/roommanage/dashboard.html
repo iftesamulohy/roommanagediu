@@ -29,122 +29,29 @@ Dashboard - Room Management DIU
       <div class="row">
 
         <!-- Left side columns -->
+        {% if request.user.is_superuser %}
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Find Empty Classrooms</h5>
-                <form class="row g-3">
-                  <div class="col-md-6">
+              <h5 class="card-title">Upload Routine</h5>
+                <form class="row g-3" method="POST" action="/dashboard" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="col-md-12">
                     <div class="form-floating">
-                      <input type="date" class="form-control" id="floatingEmail" placeholder="Your Email">
-                      <label for="floatingEmail">Expected Date</label>
+                      <input type="file" class="form-control" id="pdffile" name="pdffile" placeholder="routine">
+                      <label for="floatingEmail">Upload Routine</label>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input type="time" class="form-control" id="floatingPassword" placeholder="Password">
-                      <label for="floatingPassword">Expected Time</label>
-                    </div>
-                  </div>
+                  <button type="submit" class="mt-3 btn btn-success rounded-pill" style="width: 100%;">Upload Now</button>
                 </form>
-                <button type="button" class="mt-3 btn btn-success rounded-pill" style="width: 100%;">Find Now</button>
+                
             </div>
             
           </div>
+          {% endif %}
           </div>
           <div class="row">
           <!--All card goes here-->
-
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <img src="assets/img/classimg1.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align:center ;">
-                  <h5 class="card-title">304 AB4</h5>
-                  <p class="card-text"><b>Capacity: </b>50 people</p>
-                  <button type="button" class="btn btn-success rounded-pill"  data-bs-toggle="modal" data-bs-target="#smallModal">Book Now</button>
-                </div>
-              </div><!-- End Card with an image on top -->
-            </div>
             
           </div>
         </div><!-- End Left side columns -->
